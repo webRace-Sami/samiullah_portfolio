@@ -34,7 +34,7 @@ A world-class, cyber-luxe animated portfolio crafted for **SAMI ULLAH** (BSCS). 
   5. [Ameer Muaviya Burger Point](https://ameer-muaviya-burger-point.vercel.app/)
   6. [Tic Tac Toe Interactive Game](https://ssn-rao.github.io/tic_tac_toe/)
 - **Enterprise Career History**:
-  1. **Nishat Apparel Lahore** (2026 – Present) — Computer Operator & Compliance Data Specialist
+  1. **Nishat Apparel Lahore** (2026) — Computer Operator & Compliance Data Specialist
   2. **CBL (Crescent Bahuman Limited) Receipt Section** (2023 – 2024) — External Auditor & Microsoft Dynamics 365 ERP Specialist
   3. **Style Textile Lahore** (2022 – 2023) — Quality Checker & Production Data Specialist (Adidas, Nike, Levi's partner)
 - **ISO Standards**:

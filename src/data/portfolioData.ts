@@ -321,7 +321,7 @@ export const initialExperiences: ExperienceItem[] = [
     company: "Nishat Apparel Lahore",
     location: "Lahore, Pakistan",
     role: "Computer Operator / Systems & Audit Data Specialist",
-    tenure: "2025 – 2026",
+    tenure: "2026",
     type: "Full-Time",
     companyOverview: "Flagship company of the renowned Nishat Group and Pakistan's largest vertically integrated textile manufacturer, operating advanced end-to-end production facilities from spinning to high-capacity power generation.",
     duties: [
