@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id          String   @id @default(uuid())
+  name        String
+  title       String
+  subtitle    String
+  bio         String
+  phone       String
+  email       String
+  address     String
+  portfolioUrl String
+  githubUrl   String?
+  linkedinUrl String?
+  whatsappUrl String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  title       String
+  tagline     String
+  description String
+  category    String
+  liveUrl     String
+  githubUrl   String?
+  technologies String  // Stored as JSON/comma string
+  featured    Boolean  @default(true)
+  highlights  String   // Stored as JSON/pipe string
+  createdAt   DateTime @default(now())
+}
+
+model Experience {
+  id          String   @id @default(uuid())
+  company     String
+  location    String
+  position    String
+  tenure      String
+  summary     String
+  responsibilities String // JSON/pipe string
+  skillsUsed  String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Skill {
+  id          String   @id @default(uuid())
+  name        String
+  category    String   // Frontend, Backend, Database, Enterprise, DataAnalysis, QualityStandards
+  level       Int      // 0 - 100
+  icon        String
+  featured    Boolean  @default(false)
+}
+
+model Education {
+  id          String   @id @default(uuid())
+  degree      String
+  institution String
+  year        String
+  grade       String?
+  details     String?
+  order       Int      @default(0)
+}
+
+model Certification {
+  id          String   @id @default(uuid())
+  title       String
+  code        String
+  issuer      String?
+  description String
+}

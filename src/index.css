@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #00f2fe;
+    --color-secondary: #4facfe;
+    --color-accent: #6366f1;
+    --color-bg-dark: #040711;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #040711;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #060a17;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #06b6d4, #6366f1);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f2fe, #818cf8);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Styles */
+  .glass-card {
+    background: rgba(14, 22, 48, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-card-hover {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(20, 32, 68, 0.85);
+    border-color: rgba(6, 182, 212, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.25);
+  }
+
+  .glass-nav {
+    background: rgba(8, 13, 30, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* Gradient Text Helpers */
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #00c6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 40%, #38bdf8 80%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Border Glow */
+  .border-glow-cyan {
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+  }
+
+  .border-glow-indigo {
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Background Grid Pattern */
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+}
+
+/* 📄 Professional Clean PDF & Print Rules (Zero website leak) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10.5pt !important;
+    line-height: 1.35 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Completely hide all website sections from print */
+  main,
+  header,
+  footer,
+  nav,
+  canvas,
+  .no-print,
+  #hero,
+  #about,
+  #skills,
+  #projects,
+  #experience,
+  #education,
+  #contact {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+  }
+
+  /* Unravel the modal so only the clean resume sheet prints */
+  .resume-modal-container {
+    position: static !important;
+    display: block !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+  }
+
+  .resume-sheet {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Header rendered strictly on top of page 1 */
+  .resume-header {
+    display: block !important;
+    position: relative !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid #0284c7 !important;
+  }
+
+  .resume-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 12px !important;
+  }
+
+  .text-gradient-cyan,
+  .text-gradient-purple,
+  .text-gradient-hero {
+    -webkit-text-fill-color: #0f172a !important;
+    color: #0f172a !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #0284c7 !important;
+  }
+}
